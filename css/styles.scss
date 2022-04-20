@@ -1,0 +1,98 @@
+/* styles.scss */
+
+/* BOX SIZING */
+*{
+    box-sizing: border-box; /* Opera/IE8 */
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari/Chrome */
+}
+
+// *{
+//     border: 1px solid black;
+// }
+
+body, header, footer{
+    font-family: 'Roboto';
+}
+
+header{
+    text-align: center;
+}
+
+#title{
+    width:100%;
+    /*background-color: aqua;*/
+}
+
+#title h1{
+    /*background-color: rgb(141, 182, 218);*/
+    font-family: 'Shrikhand';
+    font-size: 1.7em;
+    font-weight: lighter;
+    margin-bottom: 12px;
+}
+
+#locate{
+    width:100%;
+    background-color: #eaeaea;
+    padding: 16px 0px;
+}
+
+#locate span{
+    margin-right: 14px;
+    font-size: 0.9em;
+}
+
+.fa-location-dot{
+    margin-right: 18px;
+}
+
+nav{
+    
+}
+
+#nav_box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: #f6f6f6;
+}
+
+#book{
+    margin-top: 36px;
+    width:65%;
+    text-align: center;
+}
+
+#book span{
+    font-size: 1.4em;
+    font-weight: bolder; 
+   
+    margin-top: 32px;  
+}
+
+#check{
+    margin-top: 16px;
+    width:85%;
+    text-align: center;
+}
+
+#check span{
+    font-weight: 100;
+}
+
+#explore{
+    margin-top: 32px;
+    margin-bottom: 56px;
+}
+
+#explore button{
+    background: linear-gradient(360deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+    padding:16px;
+    border-radius: 24px;
+    border:none;
+    color:#ffffff;
+    box-shadow: 0px 2px 5px 0px #808080;
+}
+
