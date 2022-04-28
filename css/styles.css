@@ -110,52 +110,67 @@ header {
 }
 
 /* ======================================================================================== */
+#howto h2 {
+  margin-left: 16px;
+  margin-top: 48px;
+  text-align: center;
+}
+
 #howto {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
   width: 100%;
 }
 
 #howto__body {
-  width: 100%;
-  height: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  max-width: 800px;
 }
 
-#howto h2 {
-  margin-left: 16px;
+.howto__body-number {
+  width: 24px;
+  height: 24px;
+  background-color: #9356DC;
+  border-radius: 50%;
+  position: absolute;
+  top: 25px;
+  left: -13px;
+  z-index: -1;
 }
 
-.howto__body__item {
-  width: 90%;
+#howto__body ol {
+  counter-reset: item;
+  list-style-type: none;
+}
+
+#howto__body ol li {
+  margin-bottom: 16px;
+  width: 95%;
   padding: 28px 0px;
   background-color: #f6f6f6;
   border-radius: 12px;
-}
-
-.howto__body__item__number {
-  padding: 2px 8px;
-  background-color: #9356DC;
-  border-radius: 25px;
+  z-index: -2;
+  display: block;
+  white-space: nowrap;
   position: relative;
-  right: 10px;
 }
 
-.howto__body__item__txt {
-  margin-left: 24px;
+#howto__body ol li:before {
+  content: counter(item) "";
+  counter-increment: item;
+  position: absolute;
+  left: -6px;
+  color: white;
+}
+
+.howto__body-txt {
+  display: inline-block;
+  width: 240px;
 }
 
 .fa-mobile-screen-button, .fa-list, .fa-store {
-  margin-left: 8px;
+  margin-right: 16px;
+  margin-left: 24px;
   color: #808080;
 }
 
@@ -257,11 +272,27 @@ main {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
 }
 
 .fa-heart {
   margin-top: 14px;
   margin-right: 24px;
+  color: #808080;
+}
+
+.heart__back {
+  position: absolute;
+  top: -11px;
+  right: 0px;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  color: red;
+  opacity: 0;
+}
+
+.heart__back:hover {
+  opacity: 1;
 }
 
 /* ======================================================================================== */
@@ -269,6 +300,9 @@ main {
 footer {
   background-color: #353535;
   height: 200px;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
 }
 
 #footer__body ul li {
@@ -297,6 +331,18 @@ footer {
 }
 
 @media all and (max-width: 768px) {
+  #howto {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #howto h2 {
+    text-align: left;
+  }
   #restaurants {
     height: 1318px;
   }
@@ -305,6 +351,10 @@ footer {
     margin-bottom: 0px;
     width: 90%;
     height: 250px;
+  }
+  footer {
+    display: inline-block;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
