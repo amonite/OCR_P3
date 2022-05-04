@@ -14,6 +14,14 @@ $cd-tertiary: #99E2D0;
 // *{
 //     border: 1px solid black;
 // }
+#loader{
+    width: 100%;
+    height: 2000px;
+    background-color: #000000;
+    z-index: 1000;
+    position:fixed;
+    visibility: hidden;
+}
 
 body{
     
@@ -111,6 +119,10 @@ header{
     border:none;
     color:#ffffff;
     box-shadow: 0px 2px 5px 0px #808080;
+
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 /* ======================================================================================== */
@@ -185,7 +197,7 @@ header{
     position:absolute;
     top:25px;
     left:-13px;
-    z-index: -1;
+    //z-index: -1;
     
 }
 
@@ -202,7 +214,7 @@ header{
     padding: 28px 0px; //=========================!
     background-color: #f6f6f6;
     border-radius: 12px; 
-    z-index: -2;
+    //z-index: -2;
     display:block;
     white-space: nowrap;
     &:before{
@@ -211,8 +223,15 @@ header{
         position:absolute;
         left:-6px;
         color:white;
+        z-index: 1;
     }
     position: relative;
+    transition: background-color 500ms;
+    &:hover{
+        cursor: pointer;
+        background-color: lighten($cd-primary,35%);
+        
+    }
 }
 
 // .howto__body-icone{
@@ -248,6 +267,7 @@ main{
 #restaurants{
     background-color: #f6f6f6;
     padding-top: 32px;
+    margin-bottom: 64px;
 }
 
 #restaurants h2{
@@ -355,10 +375,21 @@ main{
     position:absolute;
     top:-11px;
     right:0px;
-    transition: opacity 1s;
-    color: red;
+    transition-timing-function: ease-in-out;
+    transition: opacity 2s;
+    
+    //color: red;
+    background: linear-gradient(342deg, $cd-secondary 0%, $cd-primary 65%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     opacity: 0;
     &:hover{
+        cursor: pointer;
+        background: linear-gradient(342deg, $cd-secondary 0%, $cd-primary 65%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        //transform: scale(1.2);
+        //color: transparent;
         //color:red;
         //transform: scale(4);
         opacity:1;
@@ -384,6 +415,12 @@ footer{
     list-style-type: none;
     color:#ffffff;
     padding-bottom: 8px;
+
+}
+
+#footer__body ul li a{
+    text-decoration: none;
+    color:white;
 }
 
 #footer__body ul{
@@ -424,6 +461,7 @@ footer{
 
     #restaurants{
         height: 1318px;
+        margin-bottom: 0px;
     }
 
     .restaurants__card{
@@ -438,6 +476,8 @@ footer{
         display: inline-block;
         width:100%;
     }
+
+    
     
     // body{
     //     max-width: 375px;

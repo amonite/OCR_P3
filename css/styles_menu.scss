@@ -1,0 +1,248 @@
+//styles_menu.scss
+
+/* BOX SIZING */
+*{
+    box-sizing: border-box; /* Opera/IE8 */
+    -moz-box-sizing: border-box; /* Firefox */
+    -webkit-box-sizing: border-box; /* Safari/Chrome */
+}
+
+$cd-primary: #9356DC;
+$cd-secondary: #FF79DA;
+$cd-tertiary: #99E2D0;
+
+body{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+header{
+    // background-color: rgb(199, 146, 197);
+    position: relative;
+}
+
+body, header, footer{
+    font-family: 'Roboto';
+}
+
+#arrow__back{
+    //background-color: rgb(158, 200, 236);
+    width: fit-content;
+    position: absolute;
+    bottom:0px;
+}
+
+.fa-arrow-left{
+    padding:20px;
+    margin-top: 18px;
+}
+
+#title{
+    // background-color: rgb(148, 215, 156);
+    text-align: center;
+    flex:1;
+}
+
+#title h1{
+    font-family: 'Shrikhand';
+    font-weight: lighter;
+    font-size: 1.8em;
+}
+
+section{
+    position:relative;
+    width: 100%;
+    height:800px;
+    background-color: #b44f4f;
+}
+
+#menu{
+    position: absolute;
+    width:100%;
+    top: 250px;
+    background-color: #aaaaaa;
+    border: 1px solid black;
+    border-radius: 20px 20px 0px 0px;
+}
+
+#menu__body{
+    width: 100%;
+    background-color: #b094d2;
+    border:3px solid red;
+}
+
+.menu__item{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.item__title{
+    //width: 20%;
+    height: 64px;
+    width: 350px;
+    background-color: #95b3e3;
+}
+
+.item__title h3{
+    font-size: 1em;
+    font-weight: 300;
+    margin-bottom: 4px;
+    // margin-left: 20px;
+    // margin-bottom: 4px;
+}
+
+.dish h4{
+    margin: 6px 6px;
+}
+
+.dish span{
+    margin-left: 6px;
+    
+    background-color: #d7a559;
+}
+
+.item__dish{
+    background-color: #95b3e3;
+    border-radius: 18px;
+    // position: relative;
+    width:350px;
+    height:64px;
+    // &:hover .dish__check{
+    //     // border: 1px solid red;
+    //     transform: scaleX(1);
+    // }
+    overflow: hidden;
+}
+
+.dish__container{
+    display: flex;
+    justify-content:space-between;
+}
+
+.dish__price{
+    // background-color: #59d94d;
+    padding-top: 32px;
+    padding-right: 16px;
+    
+}
+
+.dish__price span{
+    background-color: #2013dc;
+    // width:64px;
+    // display: inline-block;
+    // white-space: nowrap;
+    // overflow: hidden;
+
+}
+
+.dish__check{
+    background-color: #353535;
+    width: 64px;
+    height: 64px;
+    transform: translateX(32px);
+}
+
+// .dish__check{
+//     background-color: #6b6a6a;
+//     border-radius: 0px 18px 18px 0px;
+//     width: 64px;
+//     height: 64px;
+//     position: absolute;
+//     top:0;
+//     right:0;
+//     transform-origin: right;
+//     transform: scaleX(0);
+
+//     transition: transform 1s;
+// }
+
+.underline{
+    background-color: $cd-tertiary;
+    width: 48px;
+    height: 3px;
+    // margin-left: 20px;
+
+}
+
+#banner{
+    width:100%;
+    height:300px;
+}
+
+.banner__img{
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+
+#menu__header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &>h2{
+        margin-left: 24px;
+        font-family: 'Shrikhand';
+        font-weight: lighter;
+    }
+}
+
+.heart{
+    margin-top: 24px;
+    margin-right: 32px;
+}
+
+/* ======================================================================================== */
+// FOOTER
+/* ======================================================================================== */
+
+footer{
+    background-color: #353535;
+    height: 200px;
+    display: grid;
+    place-items: center;
+}
+
+#footer__body ul li{
+    list-style-type: none;
+    color:#ffffff;
+    padding-bottom: 8px;
+
+}
+
+#footer__body ul li a{
+    text-decoration: none;
+    color:white;
+}
+
+#footer__body ul{
+    padding-left: 30px;
+}
+
+#footer__header{
+    padding-top: 22px;
+}
+
+#footer__header span{
+    margin-left: 32px;
+    font-family: 'Shrikhand';
+    font-size: 1.1em;
+    color:#ffffff;
+}
+
+@media all and (max-width:768px){
+
+    .item__title, .item__dish{
+        width: 90%;
+        height: 64px;
+        min-width: 300px;
+        background-color: #95b3e3;
+    }
+
+    footer{
+        display: inline-block;
+        width:100%;
+    }
+}

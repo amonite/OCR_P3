@@ -9,6 +9,15 @@
   /* Safari/Chrome */
 }
 
+#loader {
+  width: 100%;
+  height: 2000px;
+  background-color: #000000;
+  z-index: 1000;
+  position: fixed;
+  visibility: hidden;
+}
+
 body {
   max-width: 1440px;
   margin: 0 auto;
@@ -109,6 +118,10 @@ header {
           box-shadow: 0px 2px 5px 0px #808080;
 }
 
+#explore button:hover {
+  cursor: pointer;
+}
+
 /* ======================================================================================== */
 #howto h2 {
   margin-left: 16px;
@@ -135,7 +148,6 @@ header {
   position: absolute;
   top: 25px;
   left: -13px;
-  z-index: -1;
 }
 
 #howto__body ol {
@@ -149,10 +161,11 @@ header {
   padding: 28px 0px;
   background-color: #f6f6f6;
   border-radius: 12px;
-  z-index: -2;
   display: block;
   white-space: nowrap;
   position: relative;
+  -webkit-transition: background-color 500ms;
+  transition: background-color 500ms;
 }
 
 #howto__body ol li:before {
@@ -161,6 +174,12 @@ header {
   position: absolute;
   left: -6px;
   color: white;
+  z-index: 1;
+}
+
+#howto__body ol li:hover {
+  cursor: pointer;
+  background-color: #f2eafb;
 }
 
 .howto__body-txt {
@@ -187,6 +206,7 @@ main {
 #restaurants {
   background-color: #f6f6f6;
   padding-top: 32px;
+  margin-bottom: 64px;
 }
 
 #restaurants h2 {
@@ -285,13 +305,21 @@ main {
   position: absolute;
   top: -11px;
   right: 0px;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
-  color: red;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  background: linear-gradient(342deg, #FF79DA 0%, #9356DC 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 0;
 }
 
 .heart__back:hover {
+  cursor: pointer;
+  background: linear-gradient(342deg, #FF79DA 0%, #9356DC 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   opacity: 1;
 }
 
@@ -309,6 +337,11 @@ footer {
   list-style-type: none;
   color: #ffffff;
   padding-bottom: 8px;
+}
+
+#footer__body ul li a {
+  text-decoration: none;
+  color: white;
 }
 
 #footer__body ul {
@@ -345,6 +378,7 @@ footer {
   }
   #restaurants {
     height: 1318px;
+    margin-bottom: 0px;
   }
   .restaurants__card {
     margin-top: 16px;
