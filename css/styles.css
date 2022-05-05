@@ -18,7 +18,7 @@
   visibility: hidden;
 }
 
-body {
+main {
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -125,8 +125,9 @@ header {
 /* ======================================================================================== */
 #howto h2 {
   margin-left: 16px;
-  margin-top: 48px;
+  margin-top: 54px;
   text-align: center;
+  font-size: 1.4em;
 }
 
 #howto {
@@ -200,13 +201,20 @@ header {
 /* ======================================================================================== */
 /* ======================================================================================== */
 main {
-  margin-top: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 #restaurants {
-  background-color: #f6f6f6;
   padding-top: 32px;
   margin-bottom: 64px;
+  width: 70%;
 }
 
 #restaurants h2 {
@@ -225,7 +233,7 @@ main {
       align-content: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  gap: 32px;
+  gap: 12px;
 }
 
 .restaurants__card__head {
@@ -363,6 +371,18 @@ footer {
   margin-right: 8px;
 }
 
+@media all and (max-width: 1161px) {
+  main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  #restaurants {
+    width: 100%;
+  }
+}
+
 @media all and (max-width: 768px) {
   #howto {
     display: -webkit-box;
@@ -377,8 +397,10 @@ footer {
     text-align: left;
   }
   #restaurants {
+    background-color: #f6f6f6;
     height: 1318px;
     margin-bottom: 0px;
+    width: 100%;
   }
   .restaurants__card {
     margin-top: 16px;

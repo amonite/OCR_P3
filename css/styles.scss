@@ -20,10 +20,10 @@ $cd-tertiary: #99E2D0;
     background-color: #000000;
     z-index: 1000;
     position:fixed;
-    visibility: hidden;
+    visibility: hidden; //opacity:1;
 }
 
-body{
+main{
     
     max-width: 1440px;
     margin: 0 auto;
@@ -127,63 +127,31 @@ header{
 
 /* ======================================================================================== */
 
-// #howto{
-//     width: 100%;
-
-//     &__body{
-//         width: 100%;
-//         height: 300px; 
-//         // background-color: rgb(134, 134, 228);
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-around;
-//         align-items: center;
-        
-//     }
-// }
 
 #howto h2{
     margin-left: 16px;
-    margin-top: 48px;
+    margin-top: 54px;
     text-align: center;
+    font-size: 1.4em;
 }
 
-
-
-// .howto__body__item{
-//     width: 90%;
-//     padding: 28px 0px;
-//     background-color: #f6f6f6;
-//     border-radius: 12px;
-
-//     &__number{
-//         padding:2px 8px;
-//         background-color: $cd-primary;
-//         border-radius: 25px;
-//         position:relative;
-//         right:10px;
-//     }
-
-//     &__txt{
-//         margin-left: 24px;
-//     }
-// }
-
-
+aside{
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+    //  width: 400px;
+ }
 
 #howto{
+    // margin-top: 12px;
+    // margin-left: 5%;
     display: grid;
     place-content: center;
     //background-color: #c57575;
     width:100%;
-    // display: flex; //=========================!
-    // align-content:center;
-    // flex-direction: column; //=========================!
-    // justify-content: center;
-    // align-items: center; //=========================!
+   
     &__body{
         
-        //background-color: #a1dca3;
         max-width: 800px;
     }
     
@@ -261,13 +229,17 @@ header{
 
 
 main{
-    margin-top: 32px;
+    // margin-top: 32px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 #restaurants{
-    background-color: #f6f6f6;
+    // background-color: #f6f6f6;
     padding-top: 32px;
     margin-bottom: 64px;
+    width:70%;
 }
 
 #restaurants h2{
@@ -285,7 +257,7 @@ main{
     align-content: center;
     //align-items: center;
     justify-content: space-around;
-    gap: 32px;
+    gap: 12px;
 }
 
 .restaurants__card__head{
@@ -442,6 +414,16 @@ footer{
     margin-right: 8px;
 }
 
+@media all and (max-width:1161px){
+    main{
+        flex-direction: column-reverse;
+    }
+
+    #restaurants{
+        width:100%;
+    }
+}
+
 @media all and (max-width:768px){
 
     // #restaurants__container{
@@ -459,9 +441,15 @@ footer{
         text-align: left;
     }
 
+    // main{
+    //     flex-direction: column-reverse;
+    // }
+
     #restaurants{
+        background-color: #f6f6f6;
         height: 1318px;
         margin-bottom: 0px;
+        width: 100%
     }
 
     .restaurants__card{
