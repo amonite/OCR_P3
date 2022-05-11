@@ -14,13 +14,86 @@ $cd-tertiary: #99E2D0;
 // *{
 //     border: 1px solid black;
 // }
+
+// html{
+//     background-color: #000000;
+// }
+
+@keyframes fadingOut{
+    0%{
+        z-index: 100;
+        opacity: 1;
+        background-color: #000000;
+    }
+    90%{
+        background-color: #000000;
+        opacity: 1;
+        z-index: 100;
+    }
+    100%{
+        z-index: 0;
+        opacity: 0;
+        visibility: hidden;
+        background-color: #ffffff;
+    }
+}
+
+
+@keyframes plateAnim{
+    0%{
+        // z-index: 101;
+        opacity: 1;
+    }
+
+    90%{
+        opacity: 1;
+        // z-index: 101;
+    }
+
+    100%{
+        opacity: 0;
+        // z-index: 0;
+        visibility: hidden;
+        // display: none;
+    }
+}
+
+
 #loader{
+    animation-duration: 3s;
+    animation-name: fadingOut;
+    animation-fill-mode: forwards;
     width: 100%;
-    height: 2000px;
-    background-color: #000000;
-    z-index: 1000;
-    position:fixed;
-    visibility: hidden; //opacity:1;
+    height: 1670px;
+    // background-color: #000000;
+    // z-index: 100;
+    // position:fixed;
+    // visibility: hidden; 
+    //opacity:1;
+    position:absolute;
+    top:0;
+   
+    // align-items: center;
+}
+
+#loader__anim{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#plate{
+    animation-duration: 3s;
+    animation-name: plateAnim;
+    animation-fill-mode: forwards;
+    background-color: $cd-primary;
+    width:96px;
+    height:96px;
+    // z-index: 101;
+    border-radius: 50%;
+
 }
 
 main{
@@ -312,7 +385,7 @@ main{
     margin-left: 16px;
 }
 
-.restaurants__card__info span h3{
+.restaurants__card__info h3{
     margin: 0px 0px 4px 0px;
 }
 
@@ -387,7 +460,8 @@ footer{
     list-style-type: none;
     color:#ffffff;
     padding-bottom: 8px;
-
+    display: inline-block;
+    margin-right: 32px;
 }
 
 #footer__body ul li a{
@@ -404,7 +478,7 @@ footer{
 }
 
 #footer__header span{
-    margin-left: 32px;
+    // margin-left: 32px;
     font-family: 'Shrikhand';
     font-size: 1.1em;
     color:#ffffff;
@@ -415,6 +489,7 @@ footer{
 }
 
 @media all and (max-width:1161px){
+
     main{
         flex-direction: column-reverse;
     }
@@ -426,11 +501,6 @@ footer{
 
 @media all and (max-width:768px){
 
-    // #restaurants__container{
-    //     height: 1200px;
-    //     flex-direction: column;
-    //     align-items: center;
-    // }
 
     #howto{
         display: flex;
@@ -441,13 +511,13 @@ footer{
         text-align: left;
     }
 
-    // main{
-    //     flex-direction: column-reverse;
-    // }
+    section{
+
+    }
 
     #restaurants{
         background-color: #f6f6f6;
-        height: 1318px;
+        height: 1250 px;
         margin-bottom: 0px;
         width: 100%
     }
@@ -460,21 +530,21 @@ footer{
         //background-color: #99E2D0;
     }
 
+    aside{
+        margin-bottom: 64px;
+    }
+
     footer{
         display: inline-block;
         width:100%;
+    }    
+
+    #footer__header span{
+        margin-left: 32px;
     }
 
-    
-    
-    // body{
-    //     max-width: 375px;
-    //     margin: 0 auto;
-    // }
-
-    
-
-    
-
+    #footer__body ul li{
+        display:block;
+    }
 }
 
