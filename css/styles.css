@@ -11,69 +11,78 @@
 
 @-webkit-keyframes fadingOut {
   0% {
-    z-index: 100;
+    z-index: 1000;
     opacity: 1;
-    background-color: #000000;
   }
   90% {
-    background-color: #000000;
     opacity: 1;
-    z-index: 100;
+    z-index: 1000;
   }
   100% {
     z-index: 0;
     opacity: 0;
     visibility: hidden;
-    background-color: #ffffff;
   }
 }
 
 @keyframes fadingOut {
   0% {
-    z-index: 100;
+    z-index: 1000;
     opacity: 1;
-    background-color: #000000;
   }
   90% {
-    background-color: #000000;
     opacity: 1;
-    z-index: 100;
+    z-index: 1000;
   }
   100% {
     z-index: 0;
     opacity: 0;
     visibility: hidden;
-    background-color: #ffffff;
   }
 }
 
-@-webkit-keyframes plateAnim {
+@-webkit-keyframes spin {
   0% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    opacity: 0;
-    visibility: hidden;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
-@keyframes plateAnim {
+@keyframes spin {
   0% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    opacity: 0;
-    visibility: hidden;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes colorCycle {
+  0% {
+    color: #9356DC;
+  }
+  100% {
+    color: #FF79DA;
+  }
+}
+
+@keyframes colorCycle {
+  0% {
+    color: #9356DC;
+  }
+  100% {
+    color: #FF79DA;
   }
 }
 
 #loader {
+  background-color: #ffffff;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-name: fadingOut;
@@ -81,17 +90,16 @@
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   width: 100%;
-  height: 1670px;
+  height: 1313px;
   position: absolute;
   top: 0;
-}
-
-#loader__anim {
-  width: 100%;
-  height: 800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -100,17 +108,30 @@
           align-items: center;
 }
 
-#plate {
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
-  -webkit-animation-name: plateAnim;
-          animation-name: plateAnim;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  background-color: #9356DC;
+#loader__anim {
+  -webkit-animation: spin 1s ease-in-out infinite;
+          animation: spin 1s ease-in-out infinite;
+  background-color: rgba(147, 86, 220, 0.3);
   width: 96px;
   height: 96px;
   border-radius: 50%;
+  border: 5px solid rgba(147, 86, 220, 0.5);
+  border-top-color: #FF79DA;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  margin-bottom: 56px;
+}
+
+#loader__logo {
+  margin-bottom: 456px;
+}
+
+#loader__logo span {
+  -webkit-animation: colorCycle 0.5s ease-in-out infinite;
+          animation: colorCycle 0.5s ease-in-out infinite;
+  font-family: 'Shrikhand';
+  font-weight: lighter;
+  font-size: 1.8em;
 }
 
 main {
@@ -215,6 +236,10 @@ header {
 
 #explore button:hover {
   cursor: pointer;
+  background: -webkit-gradient(linear, left bottom, left top, from(#a16be0), to(#ff93e1));
+  background: linear-gradient(360deg, #a16be0 0%, #ff93e1 100%);
+  -webkit-box-shadow: 0px 2px 5px #3d3d3d;
+          box-shadow: 0px 2px 5px #3d3d3d;
 }
 
 /* ======================================================================================== */
@@ -278,6 +303,10 @@ header {
   background-color: #f2eafb;
 }
 
+#howto__body ol li:hover .ol-icon {
+  color: #9356DC;
+}
+
 .howto__body-txt {
   display: inline-block;
   width: 240px;
@@ -287,10 +316,6 @@ header {
   margin-right: 16px;
   margin-left: 24px;
   color: #808080;
-}
-
-.fa-store {
-  color: #9356DC;
 }
 
 /* ======================================================================================== */
@@ -436,6 +461,16 @@ footer {
   place-items: center;
 }
 
+#footer__header {
+  padding-top: 22px;
+}
+
+#footer__header span {
+  font-family: 'Shrikhand';
+  font-size: 1.1em;
+  color: #ffffff;
+}
+
 #footer__body ul li {
   list-style-type: none;
   color: #ffffff;
@@ -449,18 +484,12 @@ footer {
   color: white;
 }
 
+#footer__body ul li a:hover {
+  color: #9356DC;
+}
+
 #footer__body ul {
   padding-left: 30px;
-}
-
-#footer__header {
-  padding-top: 22px;
-}
-
-#footer__header span {
-  font-family: 'Shrikhand';
-  font-size: 1.1em;
-  color: #ffffff;
 }
 
 .footer-icon {
@@ -494,7 +523,7 @@ footer {
   }
   #restaurants {
     background-color: #f6f6f6;
-    height: 1250 px;
+    height: 1250px;
     margin-bottom: 0px;
     width: 100%;
   }
@@ -516,6 +545,12 @@ footer {
   }
   #footer__body ul li {
     display: block;
+  }
+  #loader {
+    height: 2297px;
+  }
+  #loader__logo {
+    margin-bottom: 1156px;
   }
 }
 /*# sourceMappingURL=styles.css.map */

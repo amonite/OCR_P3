@@ -8,7 +8,7 @@
   /* Safari/Chrome */
 }
 
-body {
+main {
   max-width: 1440px;
   margin: 0 auto;
 }
@@ -94,6 +94,29 @@ section {
 .heart {
   margin-top: 24px;
   margin-right: 32px;
+  color: #808080;
+}
+
+.heart__back {
+  position: absolute;
+  top: 20px;
+  right: 32px;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transition: opacity 2s;
+  transition: opacity 2s;
+  background: linear-gradient(342deg, #FF79DA 0%, #9356DC 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+}
+
+.heart__back:hover {
+  cursor: pointer;
+  background: linear-gradient(342deg, #FF79DA 0%, #9356DC 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 1;
 }
 
 #menu__body {
@@ -135,6 +158,93 @@ section {
   background-color: #99E2D0;
   width: 40px;
   height: 3px;
+}
+
+@-webkit-keyframes AnimMenu-1 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+@keyframes AnimMenu-1 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes AnimMenu-2 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+}
+
+@keyframes AnimMenu-2 {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes AnimMenu-3 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes AnimMenu-3 {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu__item--1 {
+  -webkit-animation: AnimMenu-1 2s ease-in-out;
+          animation: AnimMenu-1 2s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.menu__item--2 {
+  -webkit-animation: AnimMenu-2 2s ease-in-out;
+          animation: AnimMenu-2 2s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.menu__item--3 {
+  -webkit-animation: AnimMenu-3 2s ease-in-out;
+          animation: AnimMenu-3 2s ease-in-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes AnimItem_dish_1 {
@@ -362,6 +472,10 @@ section {
 
 #btn__order:hover {
   cursor: pointer;
+  background: -webkit-gradient(linear, left bottom, left top, from(#a16be0), to(#ff93e1));
+  background: linear-gradient(360deg, #a16be0 0%, #ff93e1 100%);
+  -webkit-box-shadow: 0px 2px 5px #3d3d3d;
+          box-shadow: 0px 2px 5px #3d3d3d;
 }
 
 /* ======================================================================================== */
