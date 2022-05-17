@@ -11,13 +11,6 @@ $cd-tertiary: #99E2D0;
     -webkit-box-sizing: border-box; /* Safari/Chrome */
 }
 
-// *{
-//     border: 1px solid black;
-// }
-
-// html{
-//     background-color: #000000;
-// }
 
 @keyframes fadingOut{
     0%{
@@ -34,10 +27,10 @@ $cd-tertiary: #99E2D0;
         z-index: 0;
         opacity: 0;
         visibility: hidden;
-        // background-color: #ffffff;
+        background-color: #ffffff;
         // z-index: 1000;
         // background-color: #000000;
-        // opacity: 1;
+        opacity: 1;
     }
 }
 
@@ -70,11 +63,11 @@ $cd-tertiary: #99E2D0;
 
 #loader__anim{
     animation: spin 1s ease-in-out infinite;
-    background-color: rgba($cd-primary,.3);
+    // background-color: rgba($cd-primary,.3);
     width: 96px;
     height: 96px;
     border-radius: 50%;
-    border: 5px solid rgba($cd-primary,.5);
+    border: 12px solid rgba($cd-primary,.5);
     border-top-color: $cd-secondary;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
@@ -105,7 +98,7 @@ body, header, footer{
 }
 
 /* ======================================================================================== */
-/* HEADER*/
+/* HEADER */
 /* ======================================================================================== */
 
 header{
@@ -115,20 +108,20 @@ header{
 #title{
     width:100%;
     margin:16px 0px;
-    /*background-color: aqua;*/
+}
+
+#title a{
+    text-decoration: none;
 }
 
 #title h1{
-    /*background-color: rgb(141, 182, 218);*/
     font-family: 'Shrikhand';
     font-size: 1.8em;
     font-weight: lighter;
     margin-bottom: 12px;
+    color:#000000;
 }
 
-// #title img{
-//     width:45%;
-// }
 
 #locate{
     width:100%;
@@ -146,7 +139,7 @@ header{
 }
 
 /* ======================================================================================== */
-/* NAV*/
+/* NAV */
 /* ======================================================================================== */
 
 #nav__box{
@@ -199,7 +192,8 @@ header{
 }
 
 /* ======================================================================================== */
-
+/* HOW TO */
+/* ======================================================================================== */
 
 #howto h2{
     margin-left: 16px;
@@ -208,23 +202,12 @@ header{
     font-size: 1.4em;
 }
 
-aside{
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-    //  width: 400px;
- }
-
 #howto{
-    // margin-top: 12px;
-    // margin-left: 5%;
     display: grid;
     place-content: center;
-    //background-color: #c57575;
     width:100%;
    
     &__body{
-        
         max-width: 800px;
     }
     
@@ -237,9 +220,7 @@ aside{
     border-radius: 50%;
     position:absolute;
     top:25px;
-    left:-13px;
-    //z-index: -1;
-    
+    left:-13px;   
 }
 
 #howto__body ol{
@@ -249,13 +230,12 @@ aside{
 }
 
 #howto__body ol li{
-    // display: flex; //=========================!
     margin-bottom: 16px;
     width: 95%;
-    padding: 28px 0px; //=========================!
+    padding: 28px 0px; 
     background-color: #f6f6f6;
     border-radius: 12px; 
-    //z-index: -2;
+    box-shadow: 0px 2px 10px 0px #a1a1a1;
     display:block;
     white-space: nowrap;
     &:before{
@@ -271,16 +251,12 @@ aside{
     &:hover{
         cursor: pointer;
         background-color: lighten($cd-primary,35%);
-        
+        transform: translateY(-2px);
     }
     &:hover .ol-icon{
         color: $cd-primary;
     }
 }
-
-// .howto__body-icone{
-//     display: block;
-// }
 
 //=========================!
 .howto__body-txt{
@@ -294,10 +270,6 @@ aside{
     margin-left: 24px;
     color:#808080;
 }
-
-// .fa-store{
-//     color: $cd-primary;
-// }
 
 /* ======================================================================================== */
 // MAIN
@@ -416,27 +388,33 @@ main{
     position:absolute;
     top:-11px;
     right:0px;
-    transition-timing-function: ease-in-out;
-    transition: opacity 2s;
     
-    //color: red;
+    transition: opacity 1.5s ease-in-out;
+    
     background: linear-gradient(342deg, $cd-secondary 0%, $cd-primary 65%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0;
+
     &:hover{
         cursor: pointer;
         background: linear-gradient(342deg, $cd-secondary 0%, $cd-primary 65%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
-        //transform: scale(1.2);
-        //color: transparent;
-        //color:red;
-        //transform: scale(4);
+       
         opacity:1;
+        animation: bounce 0.61s infinite 1.5s;
     }
 }
 
+@keyframes bounce{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
 
 
 /* ======================================================================================== */
