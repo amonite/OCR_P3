@@ -110,6 +110,7 @@ main{
     color: #808080;
 }
 
+
 .heart__back{
     position: absolute;
     top: 20px;
@@ -129,9 +130,25 @@ main{
         -webkit-text-fill-color: transparent; 
         
         opacity: 1;
-        animation: bounce 0.61s infinite 1.5s;   
+        animation: bounce 0.61s infinite 1.5s;  
     }
+    // &:hover .heart__core{
+    //     transform: scaleY(1); 
+        
+    // }
 }
+
+// .heart__core{
+//     position:absolute;
+//     bottom:4px;
+//     left:2px;
+//     overflow: hidden;
+//     width:20px;
+//     height:20px;
+//     transform: scaleY(0);
+//     background-color: red;
+//     transition: transform 1s;
+// }
 
 @keyframes bounce{
     0%{
@@ -251,11 +268,17 @@ main{
 
     &:hover .fa-circle-check{
         transform: rotate(360deg);
+        // animation: checkrot 1s ease-in-out;
     }
   
     overflow: hidden;
-
 }
+
+// Add this anim if the check does not rotate back is required !
+// @keyframes checkrot {
+//     0%{rotate: (0deg);}
+//     100%{rotate: (360deg);}
+// }
 
 .dish__container{
     display: flex;
@@ -311,11 +334,12 @@ main{
 
 .fa-circle-check{
     transition: 1s;
+    animation-fill-mode: forwards;
 }
 
 /* ======================================================================================== */
 
-#section-2{
+.section-2{
     background-color: #f6f6f6;
 }
 

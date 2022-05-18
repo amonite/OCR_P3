@@ -401,10 +401,12 @@ main {
 .fa-circle-check {
   -webkit-transition: 1s;
   transition: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 /* ======================================================================================== */
-#section-2 {
+.section-2 {
   background-color: #f6f6f6;
 }
 
@@ -532,4 +534,4 @@ footer {
     width: 255px;
   }
 }
-/*# sourceMappingURL=styles_menu2.css.map */
+/*# sourceMappingURL=styles_menu.css.map */
