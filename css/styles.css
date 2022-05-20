@@ -387,8 +387,8 @@ main {
 }
 
 .restaurants__card:hover {
-  -webkit-transform: scale(103%, 103%);
-          transform: scale(103%, 103%);
+  -webkit-transform: scale(1.05, 1.05);
+          transform: scale(1.05, 1.05);
 }
 
 .restaurants__card a {
