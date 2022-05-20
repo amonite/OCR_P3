@@ -312,6 +312,10 @@ main {
   overflow: hidden;
 }
 
+.item__dish:hover {
+  cursor: pointer;
+}
+
 .item__dish:hover .dish__check {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
