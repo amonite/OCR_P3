@@ -527,9 +527,15 @@ footer {
   .menu__item {
     width: 100%;
   }
+  .item__dish:hover .dish span {
+    width: 100%;
+  }
 }
 
-@media all and (max-width: 375px) {
+@media all and (max-width: 412px) {
+  .item__dish:hover .dish span {
+    width: 210px;
+  }
   .dish span {
     width: 255px;
   }

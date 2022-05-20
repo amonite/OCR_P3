@@ -11,15 +11,20 @@ $cd-tertiary: #99E2D0;
     -webkit-box-sizing: border-box; /* Safari/Chrome */
 }
 
+body, header, footer{
+    font-family: 'Roboto';
+}
+
+/* ======================================================================================== */
+/* LOADER */
+/* ======================================================================================== */
 
 @keyframes fadingOut{
     0%{
         z-index: 1000;
         opacity: 1;
-        // background-color: #000000;
     }
     90%{
-        // background-color: #000000;
         opacity: 1;
         z-index: 1000;
     }
@@ -28,14 +33,12 @@ $cd-tertiary: #99E2D0;
         opacity: 0;
         visibility: hidden;
         background-color: #ffffff;
-        // z-index: 1000;
-        // background-color: #000000;
         opacity: 1;
     }
 }
 
 @keyframes spin{
-    0%{ transform:rotate(0deg);}
+    0%{ transform: rotate(0deg);}
     100%{ transform: rotate(360deg);}
 }
 
@@ -57,13 +60,11 @@ $cd-tertiary: #99E2D0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;   
 }
 
 #loader__anim{
     animation: spin 1s ease-in-out infinite;
-    // background-color: rgba($cd-primary,.3);
     width: 96px;
     height: 96px;
     border-radius: 50%;
@@ -71,7 +72,6 @@ $cd-tertiary: #99E2D0;
     border-top-color: $cd-secondary;
     border-top-left-radius: 50%;
     border-top-right-radius: 50%;
-    // border-top-style: dashed;
     margin-bottom: 56px;
 }
 
@@ -84,17 +84,6 @@ $cd-tertiary: #99E2D0;
     font-family: 'Shrikhand';
     font-weight: lighter;
     font-size: 1.8em;
-    // color:$cd-primary;
-}
-
-main{
-    
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-body, header, footer{
-    font-family: 'Roboto';
 }
 
 /* ======================================================================================== */
@@ -106,8 +95,8 @@ header{
 }
 
 #title{
-    width:100%;
-    margin:16px 0px;
+    width: 100%;
+    margin: 16px 0px;
 }
 
 #title a{
@@ -119,12 +108,12 @@ header{
     font-size: 1.8em;
     font-weight: lighter;
     margin-bottom: 12px;
-    color:#000000;
+    color: #000000;
 }
 
 
 #locate{
-    width:100%;
+    width: 100%;
     background-color: #eaeaea;
     padding: 16px 0px;
 }
@@ -151,19 +140,19 @@ header{
 
 #book{
     margin-top: 36px;
-    width:65%;
+    width: 65%;
     text-align: center;
 }
 
 #book span{
     font-size: 1.4em;
     font-weight: bolder; 
-    margin:0;
+    margin: 0;
 }
 
 #check{
     margin-top: 16px;
-    width:85%;
+    width: 85%;
     text-align: center;
 }
 
@@ -178,12 +167,12 @@ header{
 
 #explore button{
     background: linear-gradient(360deg, $cd-primary 0%, $cd-secondary 100%);
-    padding:16px;
+    padding: 16px;
     border-radius: 24px;
-    border:none;
-    color:#ffffff;
+    border: none;
+    color: #ffffff;
     box-shadow: 0px 2px 5px 0px #808080;
-    // transition: background-color 1s ease-in-out;
+
     &:hover{
         cursor: pointer;
         background: linear-gradient(360deg, lighten($cd-primary,5%) 0%, lighten($cd-secondary,5%) 100%);
@@ -205,22 +194,21 @@ header{
 #howto{
     display: grid;
     place-content: center;
-    width:100%;
+    width: 100%;
    
     &__body{
         max-width: 800px;
-    }
-    
+    }   
 }
 
 .howto__body-number{
-    width:24px;
-    height:24px;
+    width: 24px;
+    height: 24px;
     background-color: $cd-primary;
     border-radius: 50%;
-    position:absolute;
-    top:25px;
-    left:-13px;   
+    position: absolute;
+    top: 25px;
+    left: -13px;   
 }
 
 #howto__body ol{
@@ -236,8 +224,9 @@ header{
     background-color: #f6f6f6;
     border-radius: 12px; 
     box-shadow: 0px 2px 10px 0px #a1a1a1;
-    display:block;
+    display: block;
     white-space: nowrap;
+
     &:before{
         content: counter(item) "";
         counter-increment: item;
@@ -246,13 +235,16 @@ header{
         color:white;
         z-index: 1;
     }
+
     position: relative;
     transition: background-color 500ms;
+
     &:hover{
         cursor: pointer;
         background-color: lighten($cd-primary,35%);
         transform: translateY(-2px);
     }
+
     &:hover .ol-icon{
         color: $cd-primary;
     }
@@ -261,33 +253,32 @@ header{
 //=========================!
 .howto__body-txt{
     display: inline-block;
-    width:240px;
+    width: 240px;
     
 }
 
 .fa-mobile-screen-button, .fa-list, .fa-store{
     margin-right: 16px;
     margin-left: 24px;
-    color:#808080;
+    color: #808080;
 }
 
 /* ======================================================================================== */
 // MAIN
 /* ======================================================================================== */
 
-
 main{
-    // margin-top: 32px;
-    display:flex;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
 }
 
 #restaurants{
-    // background-color: #f6f6f6;
     padding-top: 32px;
     margin-bottom: 64px;
-    width:70%;
+    width: 70%;
 }
 
 #restaurants h2{
@@ -297,19 +288,15 @@ main{
 
 #restaurants__container{
     width: 100%;
-    
-    //height: 1200px;
-    //background-color: #808080;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    //align-items: center;
     justify-content: space-around;
     gap: 12px;
 }
 
 .restaurants__card__head{
-    position:relative;
+    position: relative;
 }
 
 .restaurants__card{
@@ -317,50 +304,40 @@ main{
     width: 332px;
     margin-bottom: 32px;
     height: 250px;
-    //background-color: #3d3b65;
-    //border: 1px solid black;
     border-radius: 18px;
     box-shadow: 0px 2px 12px 0px #797979;
-    position:relative;
+    position: relative;
 
     transition: transform .5s;
 
     &:hover{
         transform: scale(103%,103%);
-    }
-    
+    }    
 }
 
 .restaurants__card a{
     text-decoration: none;
-    color:#000000;
+    color: #000000;
 }
 
 .restaurants__card__head{
     height: 180px;
-    position:relative;
+    position: relative;
 }
 
 .restaurants__card__tip{
     padding: 6px 14px;
     background-color: $cd-tertiary; 
     width:fit-content;
-    // position:relative;
-    // left:228px;
-    // bottom: 156px;
     z-index: 10;
     border-radius: 2px;
     position: absolute;
-    // left:70%;
-    // bottom:75%;
-    right:10px;
-    top:10px;
+    right: 10px;
+    top: 10px;
     font-size: 0.9em;
     font-weight: bold;
-    color:#52796f;
-    //opacity: 0.5;
+    color: #52796f;
 }
-
 
 .restaurants__card__info{
     margin-left: 16px;
@@ -373,12 +350,12 @@ main{
 .restaurants__card__img{
     width: 100%;
     object-fit: cover;
-    height:170px;
+    height: 170px;
     border-radius: 18px 18px 0px 0px;
 }
 
 .restaurants__card__body{
-    display:flex;
+    display: flex;
     justify-content: space-between;
     position: relative
 }
@@ -386,14 +363,13 @@ main{
 .fa-heart{
     margin-top: 14px;
     margin-right: 24px;
-    color:#808080;
-    
+    color: #808080;   
 }
 
 .heart__back{
-    position:absolute;
-    top:-11px;
-    right:0px;
+    position: absolute;
+    top: -11px;
+    right: 0px;
     
     transition: opacity 1.5s ease-in-out;
     
@@ -408,7 +384,7 @@ main{
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent; 
        
-        opacity:1;
+        opacity: 1;
         animation: bounce 0.61s infinite 1.5s;
     }
 }
@@ -439,15 +415,14 @@ footer{
 }
 
 #footer__header span{
-    // margin-left: 32px;
     font-family: 'Shrikhand';
     font-size: 1.1em;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 #footer__body ul li{
     list-style-type: none;
-    color:#ffffff;
+    color: #ffffff;
     padding-bottom: 8px;
     display: inline-block;
     margin-right: 32px;
@@ -455,7 +430,7 @@ footer{
 
 #footer__body ul li a{
     text-decoration: none;
-    color:white;
+    color: white;
     
     &:hover{
         color:$cd-primary;
@@ -470,19 +445,22 @@ footer{
     margin-right: 8px;
 }
 
-@media all and (max-width:1161px){
+/* ======================================================================================== */
+// MEDIA QUERIES
+/* ======================================================================================== */
+
+@media all and (max-width: 1161px){
 
     main{
         flex-direction: column-reverse;
     }
 
     #restaurants{
-        width:100%;
+        width: 100%;
     }
 }
 
-@media all and (max-width:768px){
-
+@media all and (max-width: 768px){
 
     #howto{
         display: flex;
@@ -492,8 +470,6 @@ footer{
     #howto h2{
         text-align: left;
     }
-
-    
 
     #restaurants{
         background-color: #f6f6f6;
@@ -507,7 +483,6 @@ footer{
         margin-bottom: 0px;
         width: 90%;
         height: 250px;
-        //background-color: #99E2D0;
     }
 
     aside{
@@ -524,7 +499,7 @@ footer{
     }
 
     #footer__body ul li{
-        display:block;
+        display: block;
     }
 
     #loader{

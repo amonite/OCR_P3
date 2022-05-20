@@ -70,7 +70,6 @@ main{
 #banner{
     width: 100%;
     height: 300px;
-    // position:absolute;
 }
 
 .banner__img{
@@ -85,7 +84,6 @@ main{
     position: absolute;
     width: 100%;
     top: 240px;
-    // background-color: #9356DC;
     background-color: #f6f6f6;
     border-radius: 32px 32px 0px 0px;
 }
@@ -132,23 +130,7 @@ main{
         opacity: 1;
         animation: bounce 0.61s infinite 1.5s;  
     }
-    // &:hover .heart__core{
-    //     transform: scaleY(1); 
-        
-    // }
 }
-
-// .heart__core{
-//     position:absolute;
-//     bottom:4px;
-//     left:2px;
-//     overflow: hidden;
-//     width:20px;
-//     height:20px;
-//     transform: scaleY(0);
-//     background-color: red;
-//     transition: transform 1s;
-// }
 
 @keyframes bounce{
     0%{
@@ -207,7 +189,6 @@ main{
 
 /* ======================================================================================== */
 
-
 @keyframes cascade{
     0%{
         visibility: hidden;
@@ -240,8 +221,6 @@ main{
     }
 }
 
-
-
 .item__dish{
     visibility: hidden;
     animation: cascade2 1s ease-in-out both;
@@ -249,8 +228,8 @@ main{
     background-color: #ffffff;
     border-radius: 18px;
     position: relative;
-    width:95%;
-    height:64px;
+    width: 95%;
+    height: 64px;
 
     box-shadow: 0px 2px 10px 0px #a1a1a1a1;
 
@@ -268,7 +247,6 @@ main{
 
     &:hover .fa-circle-check{
         transform: rotate(360deg);
-        // animation: checkrot 1s ease-in-out;
     }
   
     overflow: hidden;
@@ -286,7 +264,6 @@ main{
 }
 
 .dish h4{
-    // margin: 6px 6px;
     margin-top: 12px;
     margin-left: 12px;
     margin-bottom: 6px;
@@ -296,7 +273,9 @@ main{
     width: 310px;
     font-size: 0.9em;
     font-weight: 300;
+
     transition: width 1s;
+
     display: inline-block;
     margin-left: 12px;
     white-space: nowrap;
@@ -307,6 +286,7 @@ main{
 .dish__price{
     padding-top: 32px;
     padding-right: 16px;
+
     transition: 1s;
 }
 
@@ -349,10 +329,8 @@ main{
     align-items: center;   
 }
 
-
 #btn__order{
-    // position: absolute;
-    // bottom: 64px;
+
     margin-bottom: 64px;
     background: linear-gradient(360deg, $cd-primary 0%, $cd-secondary 100%);
     padding: 16px 40px 16px 40px;
@@ -428,8 +406,6 @@ footer{
         height: 1080px;
     }
 
-
-
 }
 
 @media all and (max-width: 793px){
@@ -437,7 +413,6 @@ footer{
     .section-1{
         height:1260px;
     }
-
 
     #section-1b{
         height:1340px;
@@ -472,10 +447,24 @@ footer{
         width:100%;
     }
 
+    .item__dish{
+        &:hover .dish span{
+            width: 100%;   
+        }
+    }
+
 }
 
-@media all and(max-width:375px){
+@media all and(max-width: 412px){
+
+    .item__dish{
+        &:hover .dish span{
+            width: 210px;
+        }
+    }
+
     .dish span{
         width:255px;
     }
+
 }
